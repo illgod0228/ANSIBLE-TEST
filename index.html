@@ -1,1 +1,25 @@
-asdzxvxcb
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배포 완료</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+        .container { border: 1px solid #ddd; padding: 20px; display: inline-block; border-radius: 10px; }
+        h1 { color: #2c3e50; }
+        p { color: #7f8c8d; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 서버 배포 성공!</h1>
+        <p>Ansible을 통한 Git 소스 코드 배포가 정상적으로 완료되었습니다.</p>
+        <p>현재 시간: <span id="time"></span></p>
+    </div>
+
+    <script>
+        document.getElementById('time').innerText = new Date().toLocaleString();
+    </script>
+</body>
+</html>
