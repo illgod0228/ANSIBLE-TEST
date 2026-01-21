@@ -3,7 +3,6 @@
   hosts: web
   become: true
   vars:
-    # 본인의 GitHub 저장소 주소로 변경
     git_repo_url: "https://github.com/illgod0228/ANSIBLE-TEST.git"
     web_root: "/var/www/html"
 
@@ -13,6 +12,11 @@
         name: nginx
         state: present
         update_cache: yes
+
+    - name: 기존 기본 파일 삭제
+      file:
+        path: "{{ web_root }}/index.nginx-debian.html"
+        state: absent
 
     - name: GitHub 저장소에서 최신 소스 코드 배포
       git:
@@ -26,3 +30,4 @@
         name: nginx
         state: started
         enabled: true
+
